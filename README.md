@@ -10,16 +10,17 @@ Asennettu Overlay tarkistaa tämän tiedoston HTTPS-yhteydellä noin 8 sekuntia 
 
 Käyttäjä voi myös tarkistaa päivitykset overlayn hiiren oikean painikkeen valikosta.
 
-Manifestin `status` on tällä hetkellä `setup`: versiota 2.3.3 ei ole vielä julkaistu asennuspakettina. Asiakasohjelma ei lataa mitään ennen kuin manifestin tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
+Manifestin `status` on tällä hetkellä `setup`: versiota 2.3.4 ei ole vielä julkaistu asennuspakettina. Asiakasohjelma ei lataa mitään ennen kuin manifestin tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
 
-## Valmisteltu versio 2.3.3 – TrucksBook Sync
+## Valmisteltu versio 2.3.4 – TrucksBook-lokipolun korjaus
 
-- Lukee paikallisesti TrucksBook Clientin diagnostista lokia: `C:\Users\Public\Documents\TB Client\log.txt`.
+- Etsii TrucksBook Clientin `log.txt`-tiedoston käyttäjän `%LOCALAPPDATA%\TrucksBook`-kansiosta ja enintään viiden alikansiotason syvyydeltä.
+- Jos tiedostoja on useita, valitsee viimeksi muokatun.
+- Vanha `C:\Users\Public\Documents\TB Client\log.txt` -sijainti toimii varalla.
 - Tunnistaa `Starting delivery` ja `Delivery exist, continue` -tapahtumista aktiivisen toimituksen.
 - Tunnistaa `Delivered`-tapahtuman ja näyttää toimituksen odottavan lähetystä.
 - Tunnistaa `Try upload file` -tapahtuman lähetysyrityksen.
 - Näyttää lähetyksen vahvistetuksi vasta, kun lokissa on `File is uploaded, delivery ID ...`.
-- Tunnistaa `TrucksBook Client shutting down` -tapahtuman aktiivisen toimituksen aikana ja palauttaa katkosvaroituksen myös overlayn uudelleenkäynnistyksen jälkeen.
 - Lokitiedoston sisältöä käsitellään vain paikallisesti. Sitä ei kopioida päivityspalveluun eikä lisätä GitHubiin.
 
 **Rajoitukset:** tunnistus perustuu TrucksBook Client 1.5.x -lokissa havaittuihin riveihin. Jos TrucksBook muuttaa lokimuotoa, parseri saattaa vaatia päivityksen. `File is uploaded` on TB Clientin oma lokiin kirjaama lähetyskuittaus; se ei ole erillinen VTC:n hyväksyntäkuittaus.
