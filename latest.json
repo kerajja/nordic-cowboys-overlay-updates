@@ -2,13 +2,13 @@
   "schema_version": 1,
   "product": "Nordic Cowboys Overlay",
   "channel": "stable",
-  "status": "setup",
+  "status": "published",
   "version": "2.3.4",
   "minimum_supported_version": "2.3.0",
   "release_name": "Nordic Cowboys Overlay 2.3.4",
-  "release_notes": "TrucksBook Sync -lokiseuranta. Etsii TrucksBook Clientin log.txt-tiedoston käyttäjän %LOCALAPPDATA%\\\\TrucksBook-kansiosta ja alikansioista. Tunnistaa aktiivisen keikan sekä TB Clientin lokiin kirjaaman lähetyksen vahvistuksen. Versio 2.3.4 on testattu käyttäjän Windows-koneella. Julkaisu odottaa GitHub Release -asennuspaketin latausta.",
-  "published_at": null,
-  "download_url": null,
+  "release_notes": "TrucksBook Sync: etsii TrucksBook Clientin log.txt-tiedoston käyttäjän %LOCALAPPDATA%\\\\TrucksBook-kansiosta ja alikansioista. Tunnistaa aktiivisen keikan sekä TB Clientin lokiin kirjaaman lähetyksen vahvistuksen ja näyttää TB ID:n. Testattu Windows-koneella.",
+  "published_at": "2026-11-04T16:58:02Z",
+  "download_url": "https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.4/Nordic.Cowboys.Overlay.Setup.exe",
   "sha256": "aa7d313fefc46df731881b74cee21fe9a8c53e192540bf4cc1e2e93e78728efb",
   "package_format": "exe"
 }
