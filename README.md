@@ -1,31 +1,32 @@
 # Nordic Cowboys Overlay – päivityskanava
 
-Tämä julkinen repositorio toimii Nordic Cowboys Overlayn päivitysten jakelukanavana.
+Tämä julkinen repositorio toimii Nordic Cowboys Overlayn virallisena päivityskanavana.
 
-## Julkinen päivitysmanifesti
+## Päivitysmanifesti
 
-Overlayn päivitystarkistin lukee tämän tiedoston:
+Asennettu Overlay tarkistaa tämän tiedoston HTTPS-yhteydellä noin 8 sekuntia käynnistyksen jälkeen:
 
 `https://raw.githubusercontent.com/kerajja/nordic-cowboys-overlay-updates/main/latest.json`
 
-Manifesti sisältää viimeisimmän julkaistun version, päivityspaketin latausosoitteen ja SHA-256-tarkistussumman.
+Käyttäjä voi myös tarkistaa päivitykset overlayn hiiren oikean painikkeen valikosta.
 
-## Julkaisun työnkulku
+Manifestin `status` on tällä hetkellä `setup`: ensimmäistä Setup.exe-julkaisua ei ole vielä julkaistu. Asiakasohjelma ei lataa mitään ennen kuin manifestin tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
 
-1. Rakenna Windowsissa uusi Overlay EXE ja NCOTelemetry DLL.
-2. Pakkaa päivitettävät tiedostot yhteen ZIP-pakettiin. Älä sisällytä henkilökohtaisia tietoja tai salaisuuksia.
-3. Julkaise ZIP GitHub Releases -julkaisun liitteenä.
-4. Laske ZIP-paketin SHA-256-tarkistussumma.
-5. Päivitä `latest.json` vasta, kun julkaisu ja ladattava tiedosto ovat saatavilla.
-6. Asiakasohjelma tarkistaa manifestin, vertaa versiota ja tarkistaa latauksen SHA-256:n ennen asennusta.
+## Nykyinen asiakasversio
 
-## Tärkeä nykytila
+- Valmisteltu ohjelmaversio: **2.3.0**
+- Julkaisun tila: **Windows-käännös ja testaus kesken**
+- Jakelutiedosto: `Nordic Cowboys Overlay Setup.exe`
+- Pakettityyppi: Inno Setup -asennusohjelma (EXE)
 
-Päivityskanava on alustettu, mutta automaattinen päivitys ei ole vielä valmis pelkästään tämän repositorion luomisen ansiosta. Overlayn EXE:en täytyy lisätä päivitystarkistin ja turvallinen päivitysapuri. Julkaisupaketti sekä sen todellinen latausosoite ja SHA-256 lisätään ennen ensimmäistä päivitysjulkaisua.
+## Julkaisuprosessi
+
+Lähdekoodipaketissa on kehittäjän työkalu `Publish-Update.ps1`. Kun uusi Setup.exe on rakennettu ja testattu, julkaisu tehdään GitHub CLI:llä. Skripti luo GitHub Releases -julkaisun, liittää Setup.exe:n ja päivittää latest.json-tiedoston vasta onnistuneen latauksen jälkeen. Katso `PUBLISHING.md` lähdekoodipaketista.
 
 ## Turvallisuus
 
-- Älä koskaan tallenna GitHub-tokenia, salasanaa tai muuta salaista tietoa tähän repositorioon.
-- Asiakasohjelman tulee hyväksyä päivitys vain HTTPS-yhteydestä ja tarkistaa SHA-256 ennen tiedostojen käyttöönottoa.
-- Päivitys tulee asentaa vasta, kun Overlay ja peliin ladattu telemetriaplugin voidaan turvallisesti sulkea/päivittää.
-- Manifestin muuttaminen ei yksin julkaise ohjelmaa. Julkaisun ZIP-liite on luotava ja tarkistettava erikseen.
+- Lataukset hyväksytään vain tämän repositorion GitHub Releases -polusta HTTPS:n kautta.
+- Jokaisen Setup.exe:n SHA-256 tarkistetaan ennen asennusohjelman käynnistystä.
+- Pelin on oltava suljettuna, jotta telemetriaplugin voidaan päivittää.
+- Älä tallenna GitHub-tokeneita tai salasanoja tähän julkiseen repositorioon.
+- Älä muuta manifestin tilaa `published` ennen kuin vastaava julkaisuassetti on ladattu ja tarkistussumma on laskettu.
