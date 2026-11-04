@@ -5,10 +5,10 @@
   "status": "setup",
   "version": "2.3.4",
   "minimum_supported_version": "2.3.0",
-  "release_name": null,
-  "release_notes": "TrucksBook-lokin polkukorjaus: etsii log.txt-tiedoston käyttäjän %LOCALAPPDATA%\\TrucksBook-kansiosta ja alikansioista. Jos tiedostoja on useita, valitsee viimeksi muokatun. Vanha Public Documents -sijainti toimii varalla. Windows-käännös ja käytännön testaus kesken.",
+  "release_name": "Nordic Cowboys Overlay 2.3.4",
+  "release_notes": "TrucksBook Sync -lokiseuranta. Etsii TrucksBook Clientin log.txt-tiedoston käyttäjän %LOCALAPPDATA%\\\\TrucksBook-kansiosta ja alikansioista. Tunnistaa aktiivisen keikan sekä TB Clientin lokiin kirjaaman lähetyksen vahvistuksen. Versio 2.3.4 on testattu käyttäjän Windows-koneella. Julkaisu odottaa GitHub Release -asennuspaketin latausta.",
   "published_at": null,
   "download_url": null,
-  "sha256": null,
+  "sha256": "aa7d313fefc46df731881b74cee21fe9a8c53e192540bf4cc1e2e93e78728efb",
   "package_format": "exe"
 }
