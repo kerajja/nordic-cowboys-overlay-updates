@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "product": "Nordic Cowboys Overlay",
+  "channel": "stable",
+  "status": "setup",
+  "version": "0.0.0",
+  "minimum_supported_version": "0.0.0",
+  "release_name": null,
+  "release_notes": "Päivityskanavaa valmistellaan. Ensimmäistä automaattista päivitystä ei ole vielä julkaistu.",
+  "published_at": null,
+  "download_url": null,
+  "sha256": null,
+  "package_format": "zip"
+}
