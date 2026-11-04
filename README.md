@@ -10,15 +10,17 @@ Asennettu Overlay tarkistaa tämän tiedoston HTTPS-yhteydellä noin 8 sekuntia 
 
 Käyttäjä voi myös tarkistaa päivitykset overlayn hiiren oikean painikkeen valikosta.
 
-Manifestin `status` on tällä hetkellä `setup`: versiota 2.3.1 ei ole vielä julkaistu asennuspakettina. Asiakasohjelma ei lataa mitään ennen kuin manifestin tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
+Manifestin `status` on tällä hetkellä `setup`: versiota 2.3.2 ei ole vielä julkaistu asennuspakettina. Asiakasohjelma ei lataa mitään ennen kuin manifestin tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
 
-## Valmisteltu versio 2.3.1
+## Valmisteltu versio 2.3.2
 
-- Yläpalkissa näytetään TrucksBook Client -prosessin tila.
-- `TB CLIENT KÄYNNISSÄ` tarkoittaa, että Windows-prosessi `TB Client.exe` havaittiin.
-- `TB CLIENT EI KÄYNNISSÄ` tarkoittaa, ettei prosessia havaittu.
-- Tämä ei vielä vahvista TrucksBook-tilille kirjautumista eikä palvelinyhteyttä. TrucksBook Client tukee myös offline-tilaa.
-- Windows-käännös ja testaus ovat kesken.
+- Valvoo `TB Client.exe` -prosessia aktiivisen ETS2-keikan aikana.
+- Jos TB Client puuttuu keikan alussa yli 15 sekuntia, näytetään varoitus.
+- Jos prosessi katoaa kesken aktiivisen keikan yli 5 sekunniksi sen jälkeen, kun se on jo havaittu, näytetään punainen katkosvaroitus.
+- Varoitus pysyy näkyvissä kyseisen keikan loppuun asti.
+- Jos TB Client on käynnissä, overlay kertoo silti rehellisesti, ettei sen sisäistä tallennustilaa voida varmistaa.
+
+**Rajoitus:** tämä ei vahvista TrucksBookiin kirjautumista, palvelinyhteyttä eikä sitä, että toimitus on palvelimella. TrucksBookin virallinen Wiki kertoo, että TB Client tukee offline-tilaa ja voi tallentaa toimituksia myöhempää lähetystä varten. Tarkempi tallennuksen vahvistus tarvitsee TrucksBookin dokumentoidun rajapinnan tai dokumentoidun stream-tiedostokentän.
 
 ## Julkaisuprosessi
 
