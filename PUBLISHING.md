@@ -1,21 +1,51 @@
-# Julkaisuohje – Nordic Cowboys Overlay
+# Julkaisuohje – Nordic Cowboys Overlay 2.3.4
 
-## Nykytila
+## Julkaisuvalmiuden tarkistus
 
-Päivityskanava on luotu. `latest.json` on tarkoituksella tilassa `setup`, joten asiakkaat eivät lataa päivitystä ennen kuin ensimmäinen testattu asennuspaketti on julkaistu.
+Asennusohjelma on saatu ja tarkistettu:
+- Tiedosto: `Nordic Cowboys Overlay Setup.exe`
+- Sisäinen tuoteversio: `2.3.4`
+- Tiedostokoko: 2,214,852 tavua
+- SHA-256: `aa7d313fefc46df731881b74cee21fe9a8c53e192540bf4cc1e2e93e78728efb`
 
-## Versio 2.3.0
+Manifesti `latest.json` sisältää jo versionumeron ja SHA-256:n, mutta `status` pysyy arvossa `setup`, kunnes EXE on GitHub Release -assetina. Älä vaihda tilaa ennen kuin lataus on olemassa.
 
-1. Rakenna ohjelma Windowsissa lähdekoodipaketin `Build.bat`-tiedostolla.
-2. Testaa Setup.exe omalla koneella: asennus, ETS2-telemetria, keikkatiedot, ylinopeusmuisti ja päivitystarkistus.
-3. Asenna GitHub CLI: https://cli.github.com/
-4. Kirjaudu: `gh auth login`
-5. Aja projektikansiosta `Publish-Update.ps1`.
+## Luo GitHub Release selaimessa
 
-Julkaisuskripti luo version mukaisen GitHub Releases -julkaisun, lataa `Nordic Cowboys Overlay Setup.exe` -assetin, laskee SHA-256-tarkistussumman ja päivittää `latest.json`-manifestin viimeisenä.
+1. Avaa: https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/new
+2. Luo uusi tagi: `v2.3.4`.
+3. Julkaisun otsikko: `Nordic Cowboys Overlay 2.3.4`.
+4. Lisää julkaisuun alla olevat julkaisutiedot.
+5. Lataa assetiksi täsmälleen `Nordic Cowboys Overlay Setup.exe`.
+6. Julkaise Release.
+7. Avaa julkaistu Release, napsauta EXE-assettia hiiren oikealla ja kopioi linkin osoite. Varmista, että se on suora `https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.4/...` -osoite.
+8. Päivitä `latest.json`: `status` = `published`, `download_url` = kopioitu suora asset-osoite, `published_at` = julkaisupäivä ISO 8601 -muodossa. Säilytä SHA-256 sellaisenaan.
 
-## Asiakkaan päivitys
+## Julkaisutiedot
 
-Overlay tarkistaa manifestin käynnistyksen jälkeen ja oikean hiiren painikkeen valikon komennolla **Tarkista päivitykset**. Se lataa vain tämän repositorion Releases-polusta ja tarkistaa asennusohjelman SHA-256-summan ennen käynnistämistä.
+```markdown
+## Nordic Cowboys Overlay 2.3.4
 
-Ensimmäinen 2.3.0-asennus on asennettava kerran manuaalisesti kaikille nykyisille 2.2.9-käyttäjille, koska vanhassa versiossa ei ole päivitystarkistinta. Sen jälkeen tulevat versiot voidaan toimittaa sovelluksen oman päivitystoiminnon kautta.
+- TrucksBook-keikan tunnistus paikallisesta Client-lokista.
+- Lokitiedoston automaattinen etsintä käyttäjän %LOCALAPPDATA%\\TrucksBook-kansiosta ja alikansioista.
+- Toimituksen lähetyksen vahvistus näytetään vasta, kun TrucksBook Client kirjaa TB ID:n.
+- Lokitiedosto käsitellään paikallisesti; sitä ei lähetetä päivityspalveluun.
+
+Asennus: lataa Setup.exe ja suorita se, kun ETS2 on suljettu.
+```
+
+## Komentorivi vaihtoehtona
+
+Jos GitHub CLI on asennettu ja kirjautuminen tehty (`gh auth login`), Release voidaan luoda komennolla:
+
+```powershell
+gh release create v2.3.4 ".\\Nordic Cowboys Overlay Setup.exe" --title "Nordic Cowboys Overlay 2.3.4" --notes "TrucksBook-keikan tunnistus, paikallinen lokinluku sekä toimituksen TB ID -lähetysvahvistus."
+```
+
+Sen jälkeen kopioi assetin todellinen URL Release-sivulta ja päivitä `latest.json` vasta kun lataus toimii.
+
+## Asiakkaiden päivitys
+
+Overlay tarkistaa manifestin käynnistyksen jälkeen ja oikean hiiren painikkeen valikon komennolla **Tarkista päivitykset**. Se hyväksyy vain tämän repositorion Releases-polusta tulevan asennusohjelman, ja tarkistaa SHA-256-summan ennen käynnistämistä.
+
+Ensimmäinen päivitys vanhemmasta versiosta on asennettava manuaalisesti käyttäjille, joiden overlayssa ei vielä ole päivitystarkistinta. Tämän jälkeen tuetut versiot voivat käyttää sovelluksen omaa päivitystoimintoa.
