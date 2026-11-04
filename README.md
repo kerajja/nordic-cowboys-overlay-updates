@@ -2,6 +2,12 @@
 
 Tämä julkinen repositorio toimii Nordic Cowboys Overlayn virallisena päivityskanavana.
 
+## Julkaistu versio 2.3.4
+
+<https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/tag/v2.3.4>
+
+Versio 2.3.4 on julkaistu GitHub Releases -palvelussa. Asennusohjelman SHA-256 on tarkistettu, ja `latest.json` on tilassa `published`.
+
 ## Päivitysmanifesti
 
 Asennettu Overlay tarkistaa tämän tiedoston HTTPS-yhteydellä noin 8 sekuntia käynnistyksen jälkeen:
@@ -10,7 +16,7 @@ Asennettu Overlay tarkistaa tämän tiedoston HTTPS-yhteydellä noin 8 sekuntia 
 
 Käyttäjä voi myös tarkistaa päivitykset overlayn hiiren oikean painikkeen valikosta.
 
-Manifestissa valmisteltu versio on **2.3.4**. Sen Windows-asennusohjelman sisäinen versiotieto ja SHA-256-tarkistussumma on tarkistettu. Manifestin tila on edelleen `setup`, koska GitHub Release -julkaisun binääriassetti on lataamatta. Asiakasohjelma ei lataa mitään ennen kuin tila on `published`, download_url osoittaa tämän repositorion GitHub Release -assettiin ja SHA-256 täsmää.
+Manifesti sisältää version, suoran latausosoitteen ja SHA-256-tarkistussumman. Asiakasohjelman tulee hyväksyä päivitys vain, kun tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
 
 ## Versio 2.3.4 – TrucksBook Sync
 
@@ -20,19 +26,9 @@ Manifestissa valmisteltu versio on **2.3.4**. Sen Windows-asennusohjelman sisäi
 - Näyttää toimituksen TB ID:n lähetyksen jälkeen.
 - Lukee lokitiedoston paikallisesti. Lokin sisältöä ei lähetetä päivityspalveluun eikä lisätä GitHubiin.
 
-**Testaus:** käyttäjä on testannut version 2.3.4 Windows-koneellaan. Kuvakaappauksissa näkyvät sekä aktiivisen TrucksBook-keikan tunnistus että onnistuneen lähetyksen TB ID.
+**Testaus:** käyttäjä on testannut version 2.3.4 Windows-koneellaan. Testikuvissa näkyvät sekä aktiivisen TrucksBook-keikan tunnistus että onnistuneen lähetyksen TB ID.
 
 **Rajoitukset:** tunnistus perustuu TrucksBook Clientin lokimuotoon. Jos TrucksBook muuttaa lokimerkintöjä, parseri voi vaatia päivityksen. `File is uploaded` on TB Clientin oma lokiin kirjaama lähetyskuittaus; se ei ole erillinen VTC:n hyväksyntäkuittaus.
-
-## Julkaiseminen
-
-Julkaise tagi `v2.3.4` GitHub Releases -sivulla ja liitä mukaan tiedosto `Nordic Cowboys Overlay Setup.exe`. Laske tai tarkista sen SHA-256. Päivitä vasta tämän jälkeen `latest.json`:
-- `status`: `published`
-- `download_url`: julkaistun EXE-assetin suora selainlatausosoite
-- `sha256`: tarkistussumma (manifestissa valmiina, jos assetti ei muutu)
-- `published_at`: julkaisupäivä ISO 8601 -muodossa
-
-Katso tarkemmat ohjeet tiedostosta `PUBLISHING.md`.
 
 ## Turvallisuus
 
@@ -41,4 +37,3 @@ Katso tarkemmat ohjeet tiedostosta `PUBLISHING.md`.
 - Pelin on oltava suljettuna, jotta telemetriaplugin voidaan päivittää.
 - TrucksBookin loki luetaan paikallisesti eikä sitä lähetetä ulos.
 - Älä tallenna GitHub-tokeneita, salasanoja tai diagnostisia lokeja tähän julkiseen repositorioon.
-- Älä muuta manifestin tilaa `published` ennen kuin vastaava julkaisuassetti on ladattu ja tarkistussumma on laskettu.
