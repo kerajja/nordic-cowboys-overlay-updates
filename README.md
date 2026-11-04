@@ -10,14 +10,15 @@ Asennettu Overlay tarkistaa tämän tiedoston HTTPS-yhteydellä noin 8 sekuntia 
 
 Käyttäjä voi myös tarkistaa päivitykset overlayn hiiren oikean painikkeen valikosta.
 
-Manifestin `status` on tällä hetkellä `setup`: ensimmäistä Setup.exe-julkaisua ei ole vielä julkaistu. Asiakasohjelma ei lataa mitään ennen kuin manifestin tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
+Manifestin `status` on tällä hetkellä `setup`: versiota 2.3.1 ei ole vielä julkaistu asennuspakettina. Asiakasohjelma ei lataa mitään ennen kuin manifestin tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
 
-## Nykyinen asiakasversio
+## Valmisteltu versio 2.3.1
 
-- Valmisteltu ohjelmaversio: **2.3.0**
-- Julkaisun tila: **Windows-käännös ja testaus kesken**
-- Jakelutiedosto: `Nordic Cowboys Overlay Setup.exe`
-- Pakettityyppi: Inno Setup -asennusohjelma (EXE)
+- Yläpalkissa näytetään TrucksBook Client -prosessin tila.
+- `TB CLIENT KÄYNNISSÄ` tarkoittaa, että Windows-prosessi `TB Client.exe` havaittiin.
+- `TB CLIENT EI KÄYNNISSÄ` tarkoittaa, ettei prosessia havaittu.
+- Tämä ei vielä vahvista TrucksBook-tilille kirjautumista eikä palvelinyhteyttä. TrucksBook Client tukee myös offline-tilaa.
+- Windows-käännös ja testaus ovat kesken.
 
 ## Julkaisuprosessi
 
