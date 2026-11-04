@@ -3,12 +3,12 @@
   "product": "Nordic Cowboys Overlay",
   "channel": "stable",
   "status": "setup",
-  "version": "0.0.0",
-  "minimum_supported_version": "0.0.0",
+  "version": "2.3.0",
+  "minimum_supported_version": "2.3.0",
   "release_name": null,
-  "release_notes": "Päivityskanavaa valmistellaan. Ensimmäistä automaattista päivitystä ei ole vielä julkaistu.",
+  "release_notes": "Automaattinen päivitystarkistus on mukana versiossa 2.3.0. Ensimmäinen asennuspaketti julkaistaan vasta Windows-testauksen jälkeen.",
   "published_at": null,
   "download_url": null,
   "sha256": null,
-  "package_format": "zip"
+  "package_format": "exe"
 }
