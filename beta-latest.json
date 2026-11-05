@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "product": "Nordic Cowboys Overlay",
+  "channel": "beta",
+  "status": "draft",
+  "version": "2.3.8-beta8",
+  "minimum_supported_version": "2.3.8-beta8",
+  "release_name": "Nordic Cowboys Overlay Beta 2.3.8 Beta 8",
+  "release_notes": "Erillinen automaattinen Beta-päivityskanava ja F9-asetuskytkin.",
+  "published_at": "",
+  "download_url": "https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.8-beta8/Nordic%20Cowboys%20Overlay%20Beta%20Setup.exe",
+  "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "package_format": "exe"
+}
