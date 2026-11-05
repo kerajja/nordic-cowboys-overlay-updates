@@ -8,9 +8,9 @@ https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/beta
 
 Osoite käyttää erillistä `beta-latest`-esijulkaisua. Stable ei käytä tätä aliasia, eikä sen `latest.json`-manifestia päivitetä Beta-julkaisun yhteydessä.
 
-Kun julkaiset uuden Betan lähdekoodipaketin `Publish-Beta-Update.ps1`-skriptillä, se luo tai päivittää versionumerollisen Beta-julkaisun, korvaa saman nimisen asentimen `beta-latest`-aliasjulkaisussa ja päivittää lopuksi vain beta-haaran `beta-latest.json)-manifestin. Skripti tarkistaa ennen aliasin muuttamista, että alias on edelleen esijulkaisu. Pysyvä latauslinkki pysyy näin samana mutta sen tiedosto vaihtuu uusimpaan Betaan.
+Kun julkaiset uuden Betan lähdekoodipaketin `Publish-Beta-Update.ps1`-skriptillä, se luo tai päivittää versionumerollisen Beta-julkaisun, korvaa saman nimisen asentimen `beta-latest`-aliasjulkaisussa ja päivittää lopuksi vain beta-haaran `beta-latest.json`-manifestin. Skripti tarkistaa ennen aliasin muuttamista, että alias on edelleen esijulkaisu. Pysyvä latauslinkki pysyy näin samana mutta sen tiedosto vaihtuu uusimpaan Betaan.
 
-Julkaisun jälkeen tarkista, että `beta-latest`-julkaisun asentimen SHA-256 täsmää versionumerollisen Beta-julkaisun ja `beta-latest.json)-manifestin SHA-256-arvon kanssa.
+Julkaisun jälkeen tarkista, että `beta-latest`-julkaisun asentimen SHA-256 täsmää versionumerollisen Beta-julkaisun ja `beta-latest.json`-manifestin SHA-256-arvon kanssa.
 
 ## Stable-julkaisun tarkistusohje
 
