@@ -3,12 +3,12 @@
   "product": "Nordic Cowboys Overlay",
   "channel": "stable",
   "status": "published",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "minimum_supported_version": "2.3.0",
-  "release_name": "Nordic Cowboys Overlay 2.3.5",
-  "release_notes": "Välkynnän vähentäminen taustapuskuripiirrolla, suuremmat TrucksBook-tilatekstit, ETS2:n automaattinen käynnistysvahti, overlayn sijainnin muistaminen sekä Nordic Cowboys VTC -yrityslogo läpinäkyvällä taustalla sovellus- ja pikakuvakkeissa.",
-  "published_at": "2026-11-04T18:14:40Z",
-  "download_url": "https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.5/Nordic.Cowboys.Overlay.Setup.exe",
-  "sha256": "3fde2f0919fdbebb0a9dd57b9c315cf979e35d29db372bcd75d98c284251ab5b",
+  "release_name": "Nordic Cowboys Overlay 2.3.6",
+  "release_notes": "Laajemmat käyttöliittymän mukautusasetukset: taustan läpinäkyvyys 0–100 %, overlayn koko ja tekstikoko, näytettävien tietojen valinta, kulmien pyöristys, varjo sekä sijainnin lukitus. VTC-vihreä säilyy yhtenäisenä ja tekstien sekä kuvakkeiden kirkkaus ei muutu taustan läpinäkyvyyden mukana.",
+  "published_at": "2026-11-05T08:00:40Z",
+  "download_url": "https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.6/Nordic.Cowboys.Overlay.Setup.exe",
+  "sha256": "a9a18478285f709c610cbf21c8e04ca619246b2f7c7fd249dee8ac733647dcb4",
   "package_format": "exe"
 }
