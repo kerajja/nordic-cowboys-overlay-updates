@@ -8,7 +8,7 @@
   "release_name": "Nordic Cowboys Overlay Beta 2.3.8 Beta 8",
   "release_notes": "F9-asetuskytkin sekä automaattinen, erillinen Beta-päivityskanava.",
   "published_at": "",
-  "download_url": "https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.8-beta8/Nordic%20Cowboys%20Overlay%20Beta%20Setup.exe",
-  "sha256": "5625b5eedf71549bd195a7d101f859ce2f8ab5cf0836a7a39a5a8e6a2ff59a85",
+  "download_url": "https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.8-beta8/Nordic.Cowboys.Overlay.Beta.Setup.exe",
+  "sha256": "1db69abe84270c33f3e69e35a94642945df1bf014bd38cd61acee5f69c6cd1f0",
   "package_format": "exe"
 }
