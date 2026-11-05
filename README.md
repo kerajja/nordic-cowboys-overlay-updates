@@ -2,11 +2,11 @@
 
 Tämä julkinen repositorio toimii Nordic Cowboys Overlayn virallisena päivityskanavana.
 
-## Julkaistu versio 2.3.5
+## Julkaistu versio 2.3.6
 
-<https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/tag/v2.3.5>
+<https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/tag/v2.3.6>
 
-Versio 2.3.5 on julkaistu GitHub Releases -palvelussa. Asennusohjelman SHA-256 täsmää julkaisuassettiin, ja `latest.json` on tilassa `published`.
+Versio 2.3.6 on julkaistu GitHub Releases -palvelussa. Asennusohjelman SHA-256 täsmää julkaisuassettiin, ja `latest.json` on tilassa `published`.
 
 ## Päivitysmanifesti
 
@@ -18,10 +18,21 @@ Käyttäjä voi myös tarkistaa päivitykset overlayn hiiren oikean painikkeen v
 
 Manifesti sisältää version, suoran latausosoitteen ja SHA-256-tarkistussumman. Asiakasohjelman tulee hyväksyä päivitys vain, kun tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
 
-## Versio 2.3.5 – julkaistut parannukset
+## Versio 2.3.6 – julkaistut parannukset
+
+- Taustan läpinäkyvyyttä voi säätää 0–100 %:n välillä 10 prosenttiyksikön askelin. Läpinäkyvyys vaikuttaa taustaan, ei teksteihin, kuvakkeisiin, reunoihin tai tilapillereihin.
+- Overlayn kokoa voi säätää kolmella asetuksella.
+- Tekstin kokoa voi säätää erikseen.
+- Käyttäjä voi valita, näytetäänkö kello, jäljellä oleva matka, ETA, nopeus ja TrucksBook-tilatiedot.
+- Paneelin kulmien pyöristykselle on kolme vaihtoehtoa.
+- Taustavarjon voi kytkeä päälle tai pois.
+- Overlayn sijainnin voi lukita paikoilleen.
+- Ulkoasuasetukset tallentuvat käyttäjäkohtaisesti ja säilyvät uudelleenkäynnistyksen jälkeen.
+- VTC:n vihreä korostusväri säilyy yhtenäisenä.
+
+Aiemmat ominaisuudet säilyvät:
 
 - Taustapuskuripiirto vähentää overlayn välkkymistä.
-- TrucksBookin tila- ja ilmoitustekstit ovat aiempaa suuremmat.
 - ETS2-prosessin käynnistysvahti avaa overlayn automaattisesti pelin käynnistyessä.
 - Overlay muistaa käyttäjän valitseman näyttösijainnin.
 - Nordic Cowboys VTC -yrityslogo on sovelluksen ja pikakuvakkeiden kuvakkeena läpinäkyvällä taustalla.
