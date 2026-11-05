@@ -1,6 +1,18 @@
 # Julkaisuohje – Nordic Cowboys Overlay 2.3.4
 
-## Julkaisuvalmiuden tarkistus
+## Betan pysyvä latauslinkki ja julkaisu
+
+Beta-asentimen pysyvä latausosoite on:
+
+https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/beta-latest/Nordic.Cowboys.Overlay.Beta.Setup.exe
+
+Osoite käyttää erillistä `beta-latest`-esijulkaisua. Stable ei käytä tätä aliasia, eikä sen `latest.json`-manifestia päivitetä Beta-julkaisun yhteydessä.
+
+Kun julkaiset uuden Betan lähdekoodipaketin `Publish-Beta-Update.ps1`-skriptillä, se luo tai päivittää versionumerollisen Beta-julkaisun, korvaa saman nimisen asentimen `beta-latest`-aliasjulkaisussa ja päivittää lopuksi vain beta-haaran `beta-latest.json)-manifestin. Skripti tarkistaa ennen aliasin muuttamista, että alias on edelleen esijulkaisu. Pysyvä latauslinkki pysyy näin samana mutta sen tiedosto vaihtuu uusimpaan Betaan.
+
+Julkaisun jälkeen tarkista, että `beta-latest`-julkaisun asentimen SHA-256 täsmää versionumerollisen Beta-julkaisun ja `beta-latest.json)-manifestin SHA-256-arvon kanssa.
+
+## Stable-julkaisun tarkistusohje
 
 Asennusohjelma on saatu ja tarkistettu:
 - Tiedosto: `Nordic Cowboys Overlay Setup.exe`
@@ -39,7 +51,7 @@ Asennus: lataa Setup.exe ja suorita se, kun ETS2 on suljettu.
 Jos GitHub CLI on asennettu ja kirjautuminen tehty (`gh auth login`), Release voidaan luoda komennolla:
 
 ```powershell
-gh release create v2.3.4 ".\\Nordic Cowboys Overlay Setup.exe" --title "Nordic Cowboys Overlay 2.3.4" --notes "TrucksBook-keikan tunnistus, paikallinen lokinluku sekä toimituksen TB ID -lähetysvahvistus."
+gh release create v2.3.4 `.\\Nordic Cowboys Overlay Setup.exe` --title `"Nordic Cowboys Overlay 2.3.4`" --notes `"TrucksBook-keikan tunnistus, paikallinen lokinluku sekä toimituksen TB ID -lähetysvahvistus.`"
 ```
 
 Sen jälkeen kopioi assetin todellinen URL Release-sivulta ja päivitä `latest.json` vasta kun lataus toimii.
