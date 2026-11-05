@@ -3,12 +3,12 @@
   "product": "Nordic Cowboys Overlay",
   "channel": "stable",
   "status": "published",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "minimum_supported_version": "2.3.0",
-  "release_name": "Nordic Cowboys Overlay 2.3.6",
-  "release_notes": "Laajemmat käyttöliittymän mukautusasetukset: taustan läpinäkyvyys 0–100 %, overlayn koko ja tekstikoko, näytettävien tietojen valinta, kulmien pyöristys, varjo sekä sijainnin lukitus. VTC-vihreä säilyy yhtenäisenä ja tekstien sekä kuvakkeiden kirkkaus ei muutu taustan läpinäkyvyyden mukana.",
-  "published_at": "2026-11-05T08:00:40Z",
-  "download_url": "https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.6/Nordic.Cowboys.Overlay.Setup.exe",
-  "sha256": "a9a18478285f709c610cbf21c8e04ca619246b2f7c7fd249dee8ac733647dcb4",
+  "release_name": "Nordic Cowboys Overlay 2.3.7",
+  "release_notes": "Korjaus automaattiseen päivitykseen: asennusohjelman käynnistys ja valmistumisen odotus sekä overlayn uudelleenkäynnistys asennuksen jälkeen.",
+  "published_at": "2026-11-05T08:28:25Z",
+  "download_url": "https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.7/Nordic.Cowboys.Overlay.Setup.exe",
+  "sha256": "d9cd8df4158d69268f8f017705477644aa185602b31eb6f585871de0299a4d5f",
   "package_format": "exe"
 }
