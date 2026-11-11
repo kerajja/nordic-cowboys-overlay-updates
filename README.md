@@ -1,51 +1,33 @@
-# Nordic Cowboys Overlay – päivityskanava
+# Nordic Cowboys Overlay – virallinen päivityskanava
 
-Tämä julkinen repositorio toimii Nordic Cowboys Overlayn virallisena päivityskanavana.
+Tämä repositorio jakaa **Nordic Cowboys Overlayn** Windows-asennusohjelmat ja päivitysmanifestit. **Stable** ja **Beta** ovat erilliset kanavat.
 
-## Julkaistu versio 2.3.6
+## Nykyiset julkaisut (11.11.2026)
 
-<https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/tag/v2.3.6>
+| Kanava | Nykyinen julkaistu versio | Manifesti |
+| --- | --- | --- |
+| Stable | [2.3.7](https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/tag/v2.3.7) | [`main/latest.json`](https://github.com/kerajja/nordic-cowboys-overlay-updates/blob/main/latest.json) |
+| Beta | [2.3.8-beta13](https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/tag/v2.3.8-beta13) | [`beta/beta-latest.json`](https://github.com/kerajja/nordic-cowboys-overlay-updates/blob/beta/beta-latest.json) |
 
-Versio 2.3.6 on julkaistu GitHub Releases -palvelussa. Asennusohjelman SHA-256 täsmää julkaisuassettiin, ja `latest.json` on tilassa `published`.
+**Beta 14 on valmistelussa**, eikä sitä merkitä julkaistuksi ennen kuin sen oikea Windows-asennusohjelma on GitHub Releases -palvelussa ja tarkistussummat täsmäävät.
 
-## Päivitysmanifesti
+- Pysyvä Beta-asentimen osoite: https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/beta-latest/Nordic.Cowboys.Overlay.Beta.Setup.exe
+- Stable-päivitysmanifesti: https://raw.githubusercontent.com/kerajja/nordic-cowboys-overlay-updates/main/latest.json
+- Beta-päivitysmanifesti: https://raw.githubusercontent.com/kerajja/nordic-cowboys-overlay-updates/beta/beta-latest.json
 
-Asennettu Overlay tarkistaa tämän tiedoston HTTPS-yhteydellä noin 8 sekuntia käynnistyksen jälkeen:
+## Beta 14:n julkaiseminen
 
-`https://raw.githubusercontent.com/kerajja/nordic-cowboys-overlay-updates/main/latest.json`
+- [Julkaisutiedot](BETA14_RELEASE_NOTES.md)
+- [Julkaisun tarkistuslista](BETA14_RELEASE_CHECKLIST.md)
+- [Beta 13 → Beta 14 -automaattipäivityksen testi](BETA14_UPDATE_TEST.md)
+- [Yleiset julkaisuohjeet](PUBLISHING.md)
 
-Käyttäjä voi myös tarkistaa päivitykset overlayn hiiren oikean painikkeen valikosta.
+Beta 14:n automaattista lauttareitin ennakkotunnistusta **ei ole vielä toteutettu valmiiksi**; tämä rajoitus ilmoitetaan julkaisutiedoissa.
 
-Manifesti sisältää version, suoran latausosoitteen ja SHA-256-tarkistussumman. Asiakasohjelman tulee hyväksyä päivitys vain, kun tila on `published`, versio on asennettua versiota uudempi, latausosoite on tämän repositorion GitHub Releases -osoite ja SHA-256 täsmää.
+## Päivitysten turvallisuus
 
-## Versio 2.3.6 – julkaistut parannukset
+Asiakas hyväksyy vain julkaistun ja versionumeroltaan uudemman manifestimerkinnän. Asennusohjelman latausosoitteen on osoitettava tämän repositorion GitHub Releases -lataukseen ja SHA-256-tiivisteen täsmättävä ennen asennusta.
 
-- Taustan läpinäkyvyyttä voi säätää 0–100 %:n välillä 10 prosenttiyksikön askelin. Läpinäkyvyys vaikuttaa taustaan, ei teksteihin, kuvakkeisiin, reunoihin tai tilapillereihin.
-- Overlayn kokoa voi säätää kolmella asetuksella.
-- Tekstin kokoa voi säätää erikseen.
-- Käyttäjä voi valita, näytetäänkö kello, jäljellä oleva matka, ETA, nopeus ja TrucksBook-tilatiedot.
-- Paneelin kulmien pyöristykselle on kolme vaihtoehtoa.
-- Taustavarjon voi kytkeä päälle tai pois.
-- Overlayn sijainnin voi lukita paikoilleen.
-- Ulkoasuasetukset tallentuvat käyttäjäkohtaisesti ja säilyvät uudelleenkäynnistyksen jälkeen.
-- VTC:n vihreä korostusväri säilyy yhtenäisenä.
+TrucksBookin paikallisia lokeja ei lähetetä GitHubiin. Älä tallenna GitHub-tokeneita, salasanoja tai käyttäjien diagnostisia lokeja julkiseen repositorioon.
 
-Aiemmat ominaisuudet säilyvät:
-
-- Taustapuskuripiirto vähentää overlayn välkkymistä.
-- ETS2-prosessin käynnistysvahti avaa overlayn automaattisesti pelin käynnistyessä.
-- Overlay muistaa käyttäjän valitseman näyttösijainnin.
-- Nordic Cowboys VTC -yrityslogo on sovelluksen ja pikakuvakkeiden kuvakkeena läpinäkyvällä taustalla.
-- TrucksBook Sync tunnistaa aktiivisen keikan sekä TB Clientin lokiin kirjaaman lähetyskuittauksen ja näyttää TB ID:n.
-
-Lokitiedosto käsitellään paikallisesti. Sen sisältöä ei lähetetä päivityspalveluun eikä lisätä GitHubiin.
-
-**Rajoitukset:** TrucksBook-tunnistus perustuu Clientin lokimuotoon. Jos TrucksBook muuttaa lokimerkintöjä, parseri voi vaatia päivityksen. `File is uploaded` on TB Clientin oma lokiin kirjaama lähetyskuittaus; se ei ole erillinen VTC:n hyväksyntäkuittaus. ETS2-automaattikäynnistys edellyttää, että taustavahti on asennettu ja automaattikäynnistys sallittu.
-
-## Turvallisuus
-
-- Lataukset hyväksytään vain tämän repositorion GitHub Releases -polusta HTTPS:n kautta.
-- Jokaisen Setup.exe:n SHA-256 tarkistetaan ennen asennusohjelman käynnistystä.
-- Pelin on oltava suljettuna, jotta telemetriaplugin voidaan päivittää.
-- TrucksBookin loki luetaan paikallisesti eikä sitä lähetetä ulos.
-- Älä tallenna GitHub-tokeneita, salasanoja tai diagnostisia lokeja tähän julkiseen repositorioon.
+**Beta-julkaisu ei muuta Stable 2.3.7:n `main/latest.json`-tiedostoa.**
