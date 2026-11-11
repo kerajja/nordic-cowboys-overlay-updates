@@ -1,63 +1,50 @@
-# Julkaisuohje – Nordic Cowboys Overlay 2.3.4
+# Nordic Cowboys Overlay – julkaisuohjeet (Beta 14)
 
-## Betan pysyvä latauslinkki ja julkaisu
+**Päivitetty 11.11.2026.** Tämä ohje koskee ensisijaisesti Beta-kanavaa. Stable 2.3.7:n julkaisu ja `main/latest.json` jätetään ennalleen.
 
-Beta-asentimen pysyvä latausosoite on:
+## Beta 14:n julkaisutiedot
 
-https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/beta-latest/Nordic.Cowboys.Overlay.Beta.Setup.exe
+- Versio: `2.3.8-beta14`
+- Tagi: `v2.3.8-beta14`
+- Haara: `beta`
+- Julkaisun nimi: `Nordic Cowboys Overlay Beta 2.3.8 Beta 14`
+- Julkaisutyyppi: **Pre-release**
+- Asennusassetin täsmällinen nimi: `Nordic.Cowboys.Overlay.Beta.Setup.exe`
+- Julkaisuteksti: [BETA14_RELEASE_NOTES.md](BETA14_RELEASE_NOTES.md)
+- Kaverin testi: [BETA14_UPDATE_TEST.md](BETA14_UPDATE_TEST.md)
+- Tarkistuslista: [BETA14_RELEASE_CHECKLIST.md](BETA14_RELEASE_CHECKLIST.md)
 
-Osoite käyttää erillistä `beta-latest`-esijulkaisua. Stable ei käytä tätä aliasia, eikä sen `latest.json`-manifestia päivitetä Beta-julkaisun yhteydessä.
+## Ennen julkaisemista
 
-Kun julkaiset uuden Betan lähdekoodipaketin `Publish-Beta-Update.ps1`-skriptillä, se luo tai päivittää versionumerollisen Beta-julkaisun, korvaa saman nimisen asentimen `beta-latest`-aliasjulkaisussa ja päivittää lopuksi vain beta-haaran `beta-latest.json`-manifestin. Skripti tarkistaa ennen aliasin muuttamista, että alias on edelleen esijulkaisu. Pysyvä latauslinkki pysyy näin samana mutta sen tiedosto vaihtuu uusimpaan Betaan.
+1. Käännä **viimeisin toimivaksi ETS2:ssa testattu Beta 14** Windowsissa. Varmista, ettei kyse ole vanhasta Beta 7/11/13 -asentimesta. Uuden lähdekoodin julkaisupaketissa on `Build-Beta.bat`.
+2. Testaa syntynyt `Nordic.Cowboys.Overlay.Beta.Setup.exe` Windowsissa. Tarkista, että versiona näkyy 2.3.8-beta14 ja että telemetria, mittarit, Discord sekä `TB CLIENT KÄYNNISSÄ` toimivat.
+3. Tarkista, että `gh auth status` onnistuu. Asennus tarvitsee tarvittaessa `gh auth login` -kirjautumisen.
+4. Kaverin koneelle pitää olla asennettu **2.3.8-beta13 ennen Beta 14:n julkaisua**, jos halutaan testata automaattista Beta 13 → Beta 14 -päivitystä.
 
-Julkaisun jälkeen tarkista, että `beta-latest`-julkaisun asentimen SHA-256 täsmää versionumerollisen Beta-julkaisun ja `beta-latest.json`-manifestin SHA-256-arvon kanssa.
+## Julkaisu
 
-## Stable-julkaisun tarkistusohje
+**Suositus:** käytä lähdekoodipaketin `Publish-Beta14.bat`-skriptiä *vasta* onnistuneen käännöksen ja tarkistuksen jälkeen. Skriptin on julkaistava versionumerollinen Beta 14 -esijulkaisu, korvattava `beta-latest`-aliasjulkaisun asennusassetti ja päivitettävä **vain** `beta`-haaran `beta-latest.json` vasta kun assetit ovat valmiita.
 
-Asennusohjelma on saatu ja tarkistettu:
-- Tiedosto: `Nordic Cowboys Overlay Setup.exe`
-- Sisäinen tuoteversio: `2.3.4`
-- Tiedostokoko: 2,214,852 tavua
-- SHA-256: `aa7d313fefc46df731881b74cee21fe9a8c53e192540bf4cc1e2e93e78728efb`
+Jos teet julkaisun käsin:
 
-Manifesti `latest.json` sisältää jo versionumeron ja SHA-256:n, mutta `status` pysyy arvossa `setup`, kunnes EXE on GitHub Release -assetina. Älä vaihda tilaa ennen kuin lataus on olemassa.
+1. Avaa https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/new .
+2. Luo uusi tagi `v2.3.8-beta14`, valitse kohdehaaraksi `beta`.
+3. Syötä nimeksi `Nordic Cowboys Overlay Beta 2.3.8 Beta 14` ja liitä [julkaisutiedot](BETA14_RELEASE_NOTES.md).
+4. Merkitse **Set as a pre-release** ja liitä *oikea* `Nordic.Cowboys.Overlay.Beta.Setup.exe`. Julkaise.
+5. Päivitä erikseen `beta-latest`-esijulkaisun samanniminen assetti.
+6. Laske SHA-256 Windowsissa komennolla `(Get-FileHash -Algorithm SHA256 '.\Nordic.Cowboys.Overlay.Beta.Setup.exe').Hash.ToLower()`.
+7. Vasta kun **molemmat** julkaisujen assetit ovat saatavilla ja SHA-256 täsmää, päivitä `beta/beta-latest.json` versionumeroon `2.3.8-beta14`, status = `published`, `download_url` = versiojulkaisun suora asennus-URL, `sha256` = laskettu tarkistussumma, `published_at` = todellinen julkaisuhetki ja `release_notes` = lyhyt julkaisuteksti. Älä käytä arvattua SHA-arvoa.
+8. Tarkista automaattipäivitys kaverin Beta 13 -asennuksesta.
 
-## Luo GitHub Release selaimessa
+**Älä muuta `main/latest.json`-tiedostoa, Stable-releasea tai `main`-haaraa Beta-julkaisun yhteydessä.**
 
-1. Avaa: https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/new
-2. Luo uusi tagi: `v2.3.4`.
-3. Julkaisun otsikko: `Nordic Cowboys Overlay 2.3.4`.
-4. Lisää julkaisuun alla olevat julkaisutiedot.
-5. Lataa assetiksi täsmälleen `Nordic Cowboys Overlay Setup.exe`.
-6. Julkaise Release.
-7. Avaa julkaistu Release, napsauta EXE-assettia hiiren oikealla ja kopioi linkin osoite. Varmista, että se on suora `https://github.com/kerajja/nordic-cowboys-overlay-updates/releases/download/v2.3.4/...` -osoite.
-8. Päivitä `latest.json`: `status` = `published`, `download_url` = kopioitu suora asset-osoite, `published_at` = julkaisupäivä ISO 8601 -muodossa. Säilytä SHA-256 sellaisenaan.
+## Julkaisun jälkeinen tarkistus
 
-## Julkaisutiedot
+- [ ] `v2.3.8-beta14` on esijulkaisu ja oikea asennus-EXE on sen assettina.
+- [ ] `beta-latest` on esijulkaisu ja sen assetilla on täsmälleen sama SHA-256.
+- [ ] `beta/beta-latest.json` on tilassa `published` ja viittaa Beta 14:n versionumerolliseen julkaisuun.
+- [ ] Tiedoston SHA-256 täsmää molempien release-assettien ja manifestin arvoihin.
+- [ ] Beta 13 → Beta 14 -päivitystesti onnistuu myös toisella Windows-koneella.
+- [ ] Stable 2.3.7:n `main/latest.json` on ennallaan.
 
-```markdown
-## Nordic Cowboys Overlay 2.3.4
-
-- TrucksBook-keikan tunnistus paikallisesta Client-lokista.
-- Lokitiedoston automaattinen etsintä käyttäjän %LOCALAPPDATA%\\TrucksBook-kansiosta ja alikansioista.
-- Toimituksen lähetyksen vahvistus näytetään vasta, kun TrucksBook Client kirjaa TB ID:n.
-- Lokitiedosto käsitellään paikallisesti; sitä ei lähetetä päivityspalveluun.
-
-Asennus: lataa Setup.exe ja suorita se, kun ETS2 on suljettu.
-```
-
-## Komentorivi vaihtoehtona
-
-Jos GitHub CLI on asennettu ja kirjautuminen tehty (`gh auth login`), Release voidaan luoda komennolla:
-
-```powershell
-gh release create v2.3.4 `.\\Nordic Cowboys Overlay Setup.exe` --title `"Nordic Cowboys Overlay 2.3.4`" --notes `"TrucksBook-keikan tunnistus, paikallinen lokinluku sekä toimituksen TB ID -lähetysvahvistus.`"
-```
-
-Sen jälkeen kopioi assetin todellinen URL Release-sivulta ja päivitä `latest.json` vasta kun lataus toimii.
-
-## Asiakkaiden päivitys
-
-Overlay tarkistaa manifestin käynnistyksen jälkeen ja oikean hiiren painikkeen valikon komennolla **Tarkista päivitykset**. Se hyväksyy vain tämän repositorion Releases-polusta tulevan asennusohjelman, ja tarkistaa SHA-256-summan ennen käynnistämistä.
-
-Ensimmäinen päivitys vanhemmasta versiosta on asennettava manuaalisesti käyttäjille, joiden overlayssa ei vielä ole päivitystarkistinta. Tämän jälkeen tuetut versiot voivat käyttää sovelluksen omaa päivitystoimintoa.
+Jos testi epäonnistuu, älä merkitse julkaisua valmiiksi. Korjaa Beta 14:n paketti; älä kytke Beta-virheen vuoksi Stable-päivityskanavaa uudelleen.
